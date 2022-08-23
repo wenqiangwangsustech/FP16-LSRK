@@ -1,0 +1,21 @@
+=============================================
+MPI:  PX =     2, PY =     2, PZ =     2
+GRID: NX =  1200, NY =  1200, NZ =   300
+DH = 2.00e+02
+=============================================
+SRTM90 Terrain model is used!
+Multi-source model is used!
+ShenModel is used!
+No Crust_1Medel is used!
+Construct coordinate including precessing terrian data...
+ouput "projection data" including longitude, latitude and terrain on the gound of the calculation area.
+Construct medium including precessing Vs Vp Rho...
+Precessing fualt(Source data precessing) data...
+H   Range: 8.24e+01 ~ 1.72e+02
+Vs  Range: 2.33e+03 ~ 4.62e+03
+Vp  Range: 4.02e+03 ~ 8.12e+03
+rho Range: 2.40e+03 ~ 3.33e+03
+dtmax = 1.35e-02, DT = 1.00e-02
+Slice Position Coordinate(x, y, z) and Medium(Vp, Vs, Rho) data output...
+Start calculating Wave Field:
+it =        0. Step time loss:    0.110s. Total time loss:   10.510s.

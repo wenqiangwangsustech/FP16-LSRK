@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#===============================================================================
+# Author: Tche L., USTC, seistche@gmail.com
+# Created at: Thu 14 Apr 2022 04:07:31 PM CST
+#-------------------------------------------------------------------------------
+
+ter=ter.nc
+pgv=PGV.nc
+ann=ann.txt
+cnt=cnt.lev
+fau=faultLocationOnSurf.txt
+R=-118.5301/-116.5216/34.9105/36.5357
+J=M10c
+
+illu=illu.nc
+#vext=`gmt grdinfo $pgv -T`
+#vext=${vext##-T}
+vext=-5/1.5
+
+
+
+gmt begin pdf
+  gmt set PS_MEDIA A0
+
+  gmt grdgradient $ter -A20 -Nt0.99 -G$illu
+
+  gmt basemap -J$J -R$R -BWSen -Ba
+  gmt grd2cpt $ter -CgrayC -Z
+  gmt grdimage -J$J -R$R $ter -I$illu
+
+  gmt makecpt -Cjet -D -Z -T-9/2/0.01 #-T$vext/0.01
+  gmt grdimage -J$J -R$R $pgv -I$illu -t20
+
+  gmt grdcontour -J$J -R$R $pgv -W0.5p,black -C$cnt
+
+  gmt plot -J$J -R$R -W1.p,white $fau
+
+  gmt colorbar -DjBC+w8c/0.2c+o0c/-1.2c+m+h+e -Bpxc$ann -By+l"  m/s" \
+    --MAP_TICK_LENGTH_PRIMARY=2.5p -G$vext
+
+  #rm -f $illu
+gmt end #show

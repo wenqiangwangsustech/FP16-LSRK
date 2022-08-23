@@ -1,0 +1,4 @@
+Layer-No.  Depth(m)  Densities(kg/m3)  S-Velocity(m/s)  P-Velocity(m/s)  Q-Values  Q-Values
+    1         0.0e3        2500.            3000.0            5000.          10000     10000
+    2         6.0e3        2800.            3500.0            6000.          10000     10000
+    3        12.0e3        3100.            4000.0            7000.          10000     10000
